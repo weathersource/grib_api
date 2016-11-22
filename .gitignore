@@ -1,7 +1,5 @@
 # Generated stuff from libtool, automake etc
-INSTALL
 Makefile
-Makefile.in
 *.lo
 *.la
 .deps/
@@ -15,7 +13,6 @@ src/grib_api_version.h
 autom4te.cache/
 config.log
 config.status
-configure
 grib_api.spec
 grib_api.pc
 grib_api_f90.pc
@@ -23,7 +20,6 @@ perl/GRIB-API/Makefile.PL
 rpms/grib_api.pc
 rpms/grib_api.spec
 rpms/grib_api_f90.pc
-aclocal.m4
 src/config.h.in~
 python/gribapi.pyc
 python/gribapi_swig.pyc
