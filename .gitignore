@@ -4,7 +4,6 @@ Makefile
 *.la
 .deps/
 /libtool
-config.h.in
 config/test-driver
 lex.yy.c
 stamp-h1
