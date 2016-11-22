@@ -185,9 +185,6 @@ tigge/tigge_name
 tigge/tigge_split
 
 
-# IFS samples
-ifs_samples/*/*.tmpl
-
 # compiled source #
 ###################
 *.com
