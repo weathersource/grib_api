@@ -18,8 +18,6 @@ if( HAVE_PYTHON )
 
 	    file( RELATIVE_PATH relative_rpath "${CMAKE_INSTALL_PREFIX}/${PYTHON_DEST}" "${${PNAME}_FULL_INSTALL_LIB_DIR}" )
 
-		# debug_var( relative_rpath )
-
         ecbuild_append_to_rpath( ${relative_rpath} )
         ecbuild_append_to_rpath( "../../lib" )        # for ctest to find the libs
 

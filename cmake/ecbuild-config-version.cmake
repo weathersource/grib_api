@@ -1,4 +1,4 @@
-set(PACKAGE_VERSION "2.4.0")
+set(PACKAGE_VERSION "2.6.1")
 
 # check whether the requested PACKAGE_FIND_VERSION is compatible
 

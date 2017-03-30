@@ -1,6 +1,20 @@
++------------------+
+| IMPORTANT NOTICE |
++------------------+
+Please note that 'ecCodes' is now the primary GRIB encoding/decoding package used at ECMWF.
+Nevertheless GRIB API will be maintained and new releases made publicly available to support
+decoding of ECMWF model output.
+Replacing GRIB API with ecCodes is expected to be transparent for current GRIB API users.
+In particular the "grib_" functions are included in the ecCodes library.
+Users are strongly advised to start the migration process.
+
+For more details, please see:
+https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
+
+
+
 How to build and install GRIB API library/tools
 ================================================
-
 Building and installation has been tested on several platforms and with several compilers.
 However for some platforms modifications to the installation engine may be required.
 If you encounter any problems during the installation procedure please send an e-mail

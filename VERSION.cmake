@@ -1,2 +1,2 @@
-set( ${PROJECT_NAME}_VERSION_STR  "1.19.0" )
+set( ${PROJECT_NAME}_VERSION_STR  "1.21.0" )
 

@@ -1,4 +1,4 @@
-# (C) Copyright 1996-2016 ECMWF.
+# (C) Copyright 1996-2017 ECMWF.
 #
 # This software is licensed under the terms of the Apache Licence Version 2.0
 # which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
@@ -95,6 +95,9 @@ if( ENABLE_OS_FUNCTIONS_TEST )
     ecbuild_cache_check_c_source_compiles( "#include <sys/statvfs.h>\nint main(){ struct statvfs v; }" EC_HAVE_STRUCT_STATVFS )
     # test for struct statvfs64
     ecbuild_cache_check_c_source_compiles( "#define _LARGEFILE64_SOURCE\n#include <sys/statvfs.h>\nint main(){ struct statvfs64 v; }" EC_HAVE_STRUCT_STATVFS64 )
+
+    # test for fopencookie
+    ecbuild_cache_check_c_source_compiles( "#define _GNU_SOURCE\n#include <stdio.h>\nint main(){ void* cookie; const char* mode; cookie_io_functions_t iof; FILE* fopencookie(void *cookie, const char *mode, cookie_io_functions_t iof); }" EC_HAVE_FOPENCOOKIE )
 
     # test for fsync
     ecbuild_cache_check_symbol_exists(fsync "unistd.h" EC_HAVE_FSYNC)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2005-2016 ECMWF.
+ * Copyright 2005-2017 ECMWF.
  *
  * This software is licensed under the terms of the Apache Licence Version 2.0
  * which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
@@ -146,14 +146,13 @@ int theStart=-1;
 int theEnd=-1;
 
 char* grib_tool_description=
-  "Compare grib messages contained in two files."
+  "Compare GRIB messages contained in two files."
   "\n\tIf some differences are found it fails returning an error code."
   "\n\tFloating point values are compared exactly by default, different tolerance can be defined see -P -A -R."
   "\n\tDefault behaviour: absolute error=0, bit-by-bit compare, same order in files.";
 
 char* grib_tool_name="grib_compare";
-char* grib_tool_usage="[options] "
-        "grib_file grib_file";
+char* grib_tool_usage="[options] grib_file1 grib_file2";
 
 int grib_options_count=sizeof(grib_options)/sizeof(grib_option);
 
@@ -451,8 +450,6 @@ int grib_tool_skip_handle(grib_runtime_options* options, grib_handle* h)
             morein2++;
 
         grib_handle_delete(h1);
-
-
     }
 
     grib_handle_delete(h);

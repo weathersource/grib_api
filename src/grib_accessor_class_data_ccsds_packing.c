@@ -1,5 +1,5 @@
 /*
- * Copyright 2005-2016 ECMWF.
+ * Copyright 2005-2017 ECMWF.
  *
  * This software is licensed under the terms of the Apache Licence Version 2.0
  * which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
@@ -269,7 +269,7 @@ static int  unpack_double(grib_accessor* a, double* val, size_t *len)
     */
 
     bits8 = ((bits_per_value + 7)/8)*8;
-    size = n_vals * (bits_per_value + 7)/8;
+    size = n_vals * ((bits_per_value + 7)/8);
     decoded = grib_context_buffer_malloc_clear(a->parent->h->context,size);
     if(!decoded) {
         err = GRIB_OUT_OF_MEMORY;
@@ -396,20 +396,14 @@ static int pack_double(grib_accessor* a, const double* val, size_t *len)
     if((err = grib_get_long_internal(a->parent->h,self->number_of_data_points,&number_of_data_points)) != GRIB_SUCCESS)
         return err;
 
-
-
-
     d = grib_power(decimal_scale_factor,10) ;
-
 
     max = val[0];
     min = max;
     for(i=1;i< n_vals;i++)
     {
-        if (val[i] > max )
-            max = val[i];
-        if (val[i] < min )
-            min = val[i];
+        if      (val[i] > max ) max = val[i];
+        else if (val[i] < min )  min = val[i];
     }
     min *= d;
     max *= d;
@@ -418,7 +412,7 @@ static int pack_double(grib_accessor* a, const double* val, size_t *len)
             !=GRIB_SUCCESS) {
         grib_context_log(a->parent->h->context,GRIB_LOG_ERROR,
                          "unable to find nearest_smaller_value of %g for %s",min,self->reference_value);
-        exit(GRIB_INTERNAL_ERROR);
+        return GRIB_INTERNAL_ERROR;
     }
 
     if(reference_value > min)

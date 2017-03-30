@@ -1,4 +1,4 @@
-# Copyright 2005-2016 ECMWF.
+# Copyright 2005-2017 ECMWF.
 #
 # This software is licensed under the terms of the Apache Licence Version 2.0
 # which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
@@ -14,7 +14,7 @@ PACKAGE_NAME='grib_api'
 
 # Package version
 GRIB_API_MAJOR_VERSION=1
-GRIB_API_MINOR_VERSION=19
+GRIB_API_MINOR_VERSION=21
 GRIB_API_REVISION_VERSION=0
 
 GRIB_ABI_CURRENT=1

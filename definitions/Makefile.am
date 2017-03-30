@@ -643,13 +643,6 @@ dist_definitionsgrib2_local_1098_DATA = \
 	grib2/local/1098/models.table\
 	grib2/local/1098/template.2.0.def
 
-definitionsgrib2_local_edzwdir = @GRIB_DEFINITION_PATH@/grib2/local/edzw
-dist_definitionsgrib2_local_edzw_DATA = \
-	grib2/local/edzw/2.0.3.table\
-	grib2/local/edzw/3.table\
-	grib2/local/edzw/5.table\
-	grib2/local/edzw/generatingProcessIdentifier.table
-
 definitionsgrib2_localConcepts_cnmcdir = @GRIB_DEFINITION_PATH@/grib2/localConcepts/cnmc
 dist_definitionsgrib2_localConcepts_cnmc_DATA = \
 	grib2/localConcepts/cnmc/modelName.def\

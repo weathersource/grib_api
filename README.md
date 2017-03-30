@@ -1,6 +1,22 @@
 # grib_api
 <pre>
-GRIB API is the ECMWF encoding/decoding software for GRIB edition 1 and 2.
++------------------+
+| IMPORTANT NOTICE |
++------------------+
+Please note that 'ecCodes' is now the primary GRIB encoding/decoding package used at ECMWF.
+Nevertheless GRIB API will be maintained and new releases made publicly available to support
+decoding of ECMWF model output.
+Replacing GRIB API with ecCodes is expected to be transparent for current GRIB API users.
+In particular the "grib_" functions are included in the ecCodes library.
+Users are strongly advised to start the migration process.
+
+For more details, please see:
+https://software.ecmwf.int/wiki/display/ECC/ecCodes+Home
+
+
+GRIB API
+-------------
+GRIB API is the encoding/decoding software for GRIB edition 1 and 2 developed at ECMWF.
 
 Documentation can be found here:
     https://software.ecmwf.int/wiki/display/GRIB/Home
@@ -35,7 +51,7 @@ https://software.ecmwf.int/wiki/display/GRIB/GRIB+API+CMake+installation
 COPYRIGHT AND LICENSE
 ------------------------
 
-Copyright 2005-2016 ECMWF.
+Copyright 2005-2017 ECMWF.
 
 This software is licensed under the terms of the Apache Licence Version 2.0
 which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.

@@ -114,7 +114,6 @@ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(dist_definitionsgrib2_localConcepts_lfpw1_DATA) \
 	$(dist_definitionsgrib2_localConcepts_lssw_DATA) \
 	$(dist_definitionsgrib2_local_1098_DATA) \
-	$(dist_definitionsgrib2_local_edzw_DATA) \
 	$(dist_definitionsgrib2_tables_DATA) \
 	$(dist_definitionsgrib2_tables_0_DATA) \
 	$(dist_definitionsgrib2_tables_1_DATA) \
@@ -234,7 +233,6 @@ am__installdirs = "$(DESTDIR)$(definitionsdir)" \
 	"$(DESTDIR)$(definitionsgrib2_localConcepts_lfpw1dir)" \
 	"$(DESTDIR)$(definitionsgrib2_localConcepts_lsswdir)" \
 	"$(DESTDIR)$(definitionsgrib2_local_1098dir)" \
-	"$(DESTDIR)$(definitionsgrib2_local_edzwdir)" \
 	"$(DESTDIR)$(definitionsgrib2_tablesdir)" \
 	"$(DESTDIR)$(definitionsgrib2_tables_0dir)" \
 	"$(DESTDIR)$(definitionsgrib2_tables_1dir)" \
@@ -297,7 +295,6 @@ DATA = $(dist_definitions_DATA) $(dist_definitionsbudg_DATA) \
 	$(dist_definitionsgrib2_localConcepts_lfpw1_DATA) \
 	$(dist_definitionsgrib2_localConcepts_lssw_DATA) \
 	$(dist_definitionsgrib2_local_1098_DATA) \
-	$(dist_definitionsgrib2_local_edzw_DATA) \
 	$(dist_definitionsgrib2_tables_DATA) \
 	$(dist_definitionsgrib2_tables_0_DATA) \
 	$(dist_definitionsgrib2_tables_1_DATA) \
@@ -1157,13 +1154,6 @@ dist_definitionsgrib2_local_1098_DATA = \
 	grib2/local/1098/centres.table\
 	grib2/local/1098/models.table\
 	grib2/local/1098/template.2.0.def
-
-definitionsgrib2_local_edzwdir = @GRIB_DEFINITION_PATH@/grib2/local/edzw
-dist_definitionsgrib2_local_edzw_DATA = \
-	grib2/local/edzw/2.0.3.table\
-	grib2/local/edzw/3.table\
-	grib2/local/edzw/5.table\
-	grib2/local/edzw/generatingProcessIdentifier.table
 
 definitionsgrib2_localConcepts_cnmcdir = @GRIB_DEFINITION_PATH@/grib2/localConcepts/cnmc
 dist_definitionsgrib2_localConcepts_cnmc_DATA = \
@@ -4699,27 +4689,6 @@ uninstall-dist_definitionsgrib2_local_1098DATA:
 	@list='$(dist_definitionsgrib2_local_1098_DATA)'; test -n "$(definitionsgrib2_local_1098dir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(definitionsgrib2_local_1098dir)'; $(am__uninstall_files_from_dir)
-install-dist_definitionsgrib2_local_edzwDATA: $(dist_definitionsgrib2_local_edzw_DATA)
-	@$(NORMAL_INSTALL)
-	@list='$(dist_definitionsgrib2_local_edzw_DATA)'; test -n "$(definitionsgrib2_local_edzwdir)" || list=; \
-	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(definitionsgrib2_local_edzwdir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(definitionsgrib2_local_edzwdir)" || exit 1; \
-	fi; \
-	for p in $$list; do \
-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-	  echo "$$d$$p"; \
-	done | $(am__base_list) | \
-	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(definitionsgrib2_local_edzwdir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(definitionsgrib2_local_edzwdir)" || exit $$?; \
-	done
-
-uninstall-dist_definitionsgrib2_local_edzwDATA:
-	@$(NORMAL_UNINSTALL)
-	@list='$(dist_definitionsgrib2_local_edzw_DATA)'; test -n "$(definitionsgrib2_local_edzwdir)" || list=; \
-	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(definitionsgrib2_local_edzwdir)'; $(am__uninstall_files_from_dir)
 install-dist_definitionsgrib2_tablesDATA: $(dist_definitionsgrib2_tables_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(dist_definitionsgrib2_tables_DATA)'; test -n "$(definitionsgrib2_tablesdir)" || list=; \
@@ -5349,7 +5318,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(definitionsdir)" "$(DESTDIR)$(definitionsbudgdir)" "$(DESTDIR)$(definitionscdfdir)" "$(DESTDIR)$(definitionscommondir)" "$(DESTDIR)$(definitionsgrib1dir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_ammcdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_cnmcdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_ecmfdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_edzwdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_efkldir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_eidbdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_ekmidir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_enmidir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_eswidir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_kwbcdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_lfpwdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_lowmdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_rjtddir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_sbsjdir)" "$(DESTDIR)$(definitionsgrib1_local_ecmfdir)" "$(DESTDIR)$(definitionsgrib1_local_edzwdir)" "$(DESTDIR)$(definitionsgrib1_local_rjtddir)" "$(DESTDIR)$(definitionsgrib2dir)" "$(DESTDIR)$(definitionsgrib2_localdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_cnmcdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_ecmfdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_edzwdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_efkldir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_egrrdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_ekmidir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_eswidir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_kwbcdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_lfpwdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_lfpw1dir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_lsswdir)" "$(DESTDIR)$(definitionsgrib2_local_1098dir)" "$(DESTDIR)$(definitionsgrib2_local_edzwdir)" "$(DESTDIR)$(definitionsgrib2_tablesdir)" "$(DESTDIR)$(definitionsgrib2_tables_0dir)" "$(DESTDIR)$(definitionsgrib2_tables_1dir)" "$(DESTDIR)$(definitionsgrib2_tables_10dir)" "$(DESTDIR)$(definitionsgrib2_tables_11dir)" "$(DESTDIR)$(definitionsgrib2_tables_12dir)" "$(DESTDIR)$(definitionsgrib2_tables_13dir)" "$(DESTDIR)$(definitionsgrib2_tables_14dir)" "$(DESTDIR)$(definitionsgrib2_tables_15dir)" "$(DESTDIR)$(definitionsgrib2_tables_16dir)" "$(DESTDIR)$(definitionsgrib2_tables_17dir)" "$(DESTDIR)$(definitionsgrib2_tables_18dir)" "$(DESTDIR)$(definitionsgrib2_tables_2dir)" "$(DESTDIR)$(definitionsgrib2_tables_3dir)" "$(DESTDIR)$(definitionsgrib2_tables_4dir)" "$(DESTDIR)$(definitionsgrib2_tables_5dir)" "$(DESTDIR)$(definitionsgrib2_tables_6dir)" "$(DESTDIR)$(definitionsgrib2_tables_7dir)" "$(DESTDIR)$(definitionsgrib2_tables_8dir)" "$(DESTDIR)$(definitionsgrib2_tables_9dir)" "$(DESTDIR)$(definitionsgrib2_tables_local_ecmfdir)" "$(DESTDIR)$(definitionsgrib2_tables_local_ecmf_4dir)" "$(DESTDIR)$(definitionsgtsdir)" "$(DESTDIR)$(definitionshdf5dir)" "$(DESTDIR)$(definitionsmarsdir)" "$(DESTDIR)$(definitionsmars_eswidir)" "$(DESTDIR)$(definitionstidedir)" "$(DESTDIR)$(definitionswrapdir)"; do \
+	for dir in "$(DESTDIR)$(definitionsdir)" "$(DESTDIR)$(definitionsbudgdir)" "$(DESTDIR)$(definitionscdfdir)" "$(DESTDIR)$(definitionscommondir)" "$(DESTDIR)$(definitionsgrib1dir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_ammcdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_cnmcdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_ecmfdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_edzwdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_efkldir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_eidbdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_ekmidir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_enmidir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_eswidir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_kwbcdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_lfpwdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_lowmdir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_rjtddir)" "$(DESTDIR)$(definitionsgrib1_localConcepts_sbsjdir)" "$(DESTDIR)$(definitionsgrib1_local_ecmfdir)" "$(DESTDIR)$(definitionsgrib1_local_edzwdir)" "$(DESTDIR)$(definitionsgrib1_local_rjtddir)" "$(DESTDIR)$(definitionsgrib2dir)" "$(DESTDIR)$(definitionsgrib2_localdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_cnmcdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_ecmfdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_edzwdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_efkldir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_egrrdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_ekmidir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_eswidir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_kwbcdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_lfpwdir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_lfpw1dir)" "$(DESTDIR)$(definitionsgrib2_localConcepts_lsswdir)" "$(DESTDIR)$(definitionsgrib2_local_1098dir)" "$(DESTDIR)$(definitionsgrib2_tablesdir)" "$(DESTDIR)$(definitionsgrib2_tables_0dir)" "$(DESTDIR)$(definitionsgrib2_tables_1dir)" "$(DESTDIR)$(definitionsgrib2_tables_10dir)" "$(DESTDIR)$(definitionsgrib2_tables_11dir)" "$(DESTDIR)$(definitionsgrib2_tables_12dir)" "$(DESTDIR)$(definitionsgrib2_tables_13dir)" "$(DESTDIR)$(definitionsgrib2_tables_14dir)" "$(DESTDIR)$(definitionsgrib2_tables_15dir)" "$(DESTDIR)$(definitionsgrib2_tables_16dir)" "$(DESTDIR)$(definitionsgrib2_tables_17dir)" "$(DESTDIR)$(definitionsgrib2_tables_18dir)" "$(DESTDIR)$(definitionsgrib2_tables_2dir)" "$(DESTDIR)$(definitionsgrib2_tables_3dir)" "$(DESTDIR)$(definitionsgrib2_tables_4dir)" "$(DESTDIR)$(definitionsgrib2_tables_5dir)" "$(DESTDIR)$(definitionsgrib2_tables_6dir)" "$(DESTDIR)$(definitionsgrib2_tables_7dir)" "$(DESTDIR)$(definitionsgrib2_tables_8dir)" "$(DESTDIR)$(definitionsgrib2_tables_9dir)" "$(DESTDIR)$(definitionsgrib2_tables_local_ecmfdir)" "$(DESTDIR)$(definitionsgrib2_tables_local_ecmf_4dir)" "$(DESTDIR)$(definitionsgtsdir)" "$(DESTDIR)$(definitionshdf5dir)" "$(DESTDIR)$(definitionsmarsdir)" "$(DESTDIR)$(definitionsmars_eswidir)" "$(DESTDIR)$(definitionstidedir)" "$(DESTDIR)$(definitionswrapdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -5438,7 +5407,6 @@ install-data-am: install-dist_definitionsDATA \
 	install-dist_definitionsgrib2_localConcepts_lsswDATA \
 	install-dist_definitionsgrib2_localDATA \
 	install-dist_definitionsgrib2_local_1098DATA \
-	install-dist_definitionsgrib2_local_edzwDATA \
 	install-dist_definitionsgrib2_tablesDATA \
 	install-dist_definitionsgrib2_tables_0DATA \
 	install-dist_definitionsgrib2_tables_10DATA \
@@ -5546,7 +5514,6 @@ uninstall-am: uninstall-dist_definitionsDATA \
 	uninstall-dist_definitionsgrib2_localConcepts_lsswDATA \
 	uninstall-dist_definitionsgrib2_localDATA \
 	uninstall-dist_definitionsgrib2_local_1098DATA \
-	uninstall-dist_definitionsgrib2_local_edzwDATA \
 	uninstall-dist_definitionsgrib2_tablesDATA \
 	uninstall-dist_definitionsgrib2_tables_0DATA \
 	uninstall-dist_definitionsgrib2_tables_10DATA \
@@ -5617,7 +5584,6 @@ uninstall-am: uninstall-dist_definitionsDATA \
 	install-dist_definitionsgrib2_localConcepts_lsswDATA \
 	install-dist_definitionsgrib2_localDATA \
 	install-dist_definitionsgrib2_local_1098DATA \
-	install-dist_definitionsgrib2_local_edzwDATA \
 	install-dist_definitionsgrib2_tablesDATA \
 	install-dist_definitionsgrib2_tables_0DATA \
 	install-dist_definitionsgrib2_tables_10DATA \
@@ -5688,7 +5654,6 @@ uninstall-am: uninstall-dist_definitionsDATA \
 	uninstall-dist_definitionsgrib2_localConcepts_lsswDATA \
 	uninstall-dist_definitionsgrib2_localDATA \
 	uninstall-dist_definitionsgrib2_local_1098DATA \
-	uninstall-dist_definitionsgrib2_local_edzwDATA \
 	uninstall-dist_definitionsgrib2_tablesDATA \
 	uninstall-dist_definitionsgrib2_tables_0DATA \
 	uninstall-dist_definitionsgrib2_tables_10DATA \

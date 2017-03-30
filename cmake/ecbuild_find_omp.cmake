@@ -1,4 +1,4 @@
-# (C) Copyright 1996-2016 ECMWF.
+# (C) Copyright 1996-2017 ECMWF.
 #
 # This software is licensed under the terms of the Apache Licence Version 2.0
 # which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
@@ -30,7 +30,7 @@ macro( lookup_omp_flags )
   #ifdef _OPENMP
     #pragma omp parallel
     {
-      int id = omp_get_thread_num();
+      (void)omp_get_thread_num();
     }
     return 0;
   #else
@@ -53,7 +53,7 @@ macro( lookup_omp_flags )
     #pragma omp parallel
     {
       // This pragma should have passed compilation
-      int id = 0;
+      (void)0;
     }
     return 0;
   #endif
@@ -155,7 +155,7 @@ macro( ecbuild_find_omp )
           check_cxx_source_compiles("${_SOURCE}" ${_FLAG} )
         endif()
         if( _LANG STREQUAL "Fortran" )
-          check_fortran_source_compiles("${_SOURCE}" ${_FLAG} )
+          check_fortran_source_compiles("${_SOURCE}" ${_FLAG} SRC_EXT f90)
         endif()
         set(CMAKE_REQUIRED_FLAGS "${SAVE_CMAKE_REQUIRED_FLAGS}")
       endif()

@@ -28,9 +28,9 @@ set( ECBUILD_TPL_INCLUDE_DIRS  "" )
 set( ECBUILD_TPL_DEFINITIONS   "" )
 set( ECBUILD_TPL_LIBRARIES     "" )
 
-set( ECBUILD_VERSION           "2.4.0" )
-set( ECBUILD_GIT_SHA1          "3f07644f712f9219706dbd63c87c6d017a99f8f0" )
-set( ECBUILD_GIT_SHA1_SHORT    "3f07644" )
+set( ECBUILD_VERSION           "2.6.1" )
+set( ECBUILD_GIT_SHA1          "25fa5e66715cbc38481ea8f8619ee4e89e015e9e" )
+set( ECBUILD_GIT_SHA1_SHORT    "25fa5e6" )
 
 ### export include paths as absolute paths
 
@@ -73,7 +73,7 @@ include( ${CMAKE_CURRENT_LIST_FILE}.tpls OPTIONAL )
 if( NOT ecbuild_BINARY_DIR )
 
   if( ECBUILD_IS_BUILD_DIR_EXPORT )
-    include( "/tmp/metabuilds/ecflow-metab_5062/opensuse131/ecbuild/builds/ecbuild-targets.cmake" OPTIONAL )
+    include( "/tmp/metabuilds/ecflow-metab_5062/leap42/ecbuild/builds/ecbuild-targets.cmake" OPTIONAL )
   else()
     include( "${ECBUILD_CMAKE_DIR}/ecbuild-targets.cmake" )
   endif()
@@ -89,7 +89,7 @@ mark_as_advanced( ECBUILD_IMPORT_FILE )
 
 if( NOT ecbuild )
   if( ECBUILD_IS_BUILD_DIR_EXPORT )
-    set( ecbuild_BASE_DIR /tmp/metabuilds/ecflow-metab_5062/opensuse131/ecbuild/builds )
+    set( ecbuild_BASE_DIR /tmp/metabuilds/ecflow-metab_5062/leap42/ecbuild/builds )
   else()
     get_filename_component( abspath ${CMAKE_CURRENT_LIST_DIR}/../../.. ABSOLUTE )
     set( ecbuild_BASE_DIR ${abspath} )
